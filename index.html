@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1f3a">
+  <meta name="description" content="AI・自治体行政・セキュリティの公開一次情報を確認するニュース一覧の試用版">
+  <meta name="robots" content="noindex,nofollow">
+  <title>AI・行政デジタルニュース｜確認版</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f3a'/%3E%3Cpath d='M16 18h32v7H16zm0 12h24v7H16zm0 12h18v7H16z' fill='%233ed6c5'/%3E%3Ccircle cx='47' cy='45' r='8' fill='%23ffbe3d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#news-list">記事一覧へ移動</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span>スマホ試用版</div>
+        <h1>AI・行政デジタルニュース</h1>
+      </div>
+      <div class="header-meta" aria-label="更新状況">
+        <span id="collection-status">データ確認中</span>
+        <span id="collection-time"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="notice" aria-label="確認版について">
+      <div class="notice-icon" aria-hidden="true">i</div>
+      <div>
+        <strong>画面と操作を確認するための試作版です。</strong>
+        <p id="summary-status">本文要約はGemini接続後に表示します。日本語・英語の記事が対象です。</p>
+        <p>記事は保存時点のデータです。現在は手動更新で、自動更新は未設定です。更新日時は画面上部をご確認ください。</p>
+      </div>
+    </section>
+
+    <section class="overview" aria-label="一覧の状況">
+      <div class="overview-primary">
+        <span class="overview-label">表示中</span>
+        <strong id="visible-count">0</strong>
+        <span>件</span>
+      </div>
+      <div class="overview-stat"><span>未読</span><strong id="unread-count">0</strong></div>
+      <div class="overview-stat"><span>取得元</span><strong id="source-count">0</strong></div>
+      <div class="overview-stat"><span>取得状態</span><strong id="health-count">—</strong></div>
+    </section>
+
+    <nav class="tabs" aria-label="ニュース分類" role="tablist">
+      <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="top">保存時の注目</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="ai">AI</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="government">自治体・公務員</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="security">セキュリティ</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="unread">未読</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-tab="sources">ソース</button>
+    </nav>
+
+    <section class="filter-bar" aria-label="絞り込み">
+      <label for="source-filter">発出元</label>
+      <select id="source-filter">
+        <option value="all">すべての発出元</option>
+      </select>
+      <button id="clear-read" class="secondary-button" type="button">既読をすべて解除</button>
+    </section>
+
+    <section id="source-panel" class="source-panel" hidden aria-labelledby="source-panel-title">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">SOURCE HEALTH</span>
+          <h2 id="source-panel-title">取得元の状態</h2>
+        </div>
+        <span class="section-note">発出元を選ぶと記事を絞り込めます</span>
+      </div>
+      <div id="source-grid" class="source-grid"></div>
+    </section>
+
+    <section aria-live="polite" aria-busy="false">
+      <div class="section-heading">
+        <div>
+          <span id="section-kicker" class="section-kicker">TOP STORIES</span>
+          <h2 id="section-title">保存時の注目</h2>
+        </div>
+        <span id="section-note" class="section-note">保存時点の直近72時間から最大10件</span>
+      </div>
+      <div id="empty-state" class="empty-state" hidden>
+        <strong>該当する記事はありません</strong>
+        <span>分類か発出元を変更してください。</span>
+      </div>
+      <div id="news-list" class="news-list"></div>
+      <button id="load-more" class="load-more" type="button" hidden>さらに表示</button>
+    </section>
+
+    <footer>
+      <p>公開一次情報への非公式リンク集です。正確な内容、対象、期限、対応の要否は発出元の原文で確認してください。</p>
+      <p>既読状態はこのブラウザ内だけに保存されます。PCとスマホの間では同期しません。</p>
+      <p id="build-info"></p>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

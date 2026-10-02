@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T05:43:01.595261Z",
+  "sourceThresholdMet": true,
+  "sources": [
+    {
+      "id": "openai-news",
+      "name": "OpenAI News",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 8,
+      "usedLastKnownGood": false
+    },
+    {
+      "id": "google-ai",
+      "name": "Google AI",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 1,
+      "usedLastKnownGood": false
+    },
+    {
+      "id": "github-ai-ml",
+      "name": "GitHub AI & ML",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 0,
+      "usedLastKnownGood": false
+    },
+    {
+      "id": "huggingface-blog",
+      "name": "Hugging Face Blog",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 3,
+      "usedLastKnownGood": false
+    },
+    {
+      "id": "digital-agency",
+      "name": "デジタル庁",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 10,
+      "usedLastKnownGood": false
+    },
+    {
+      "id": "egov-it-society",
+      "name": "e-Gov IT社会化推進",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 0,
+      "usedLastKnownGood": false
+    },
+    {
+      "id": "egov-local-government",
+      "name": "e-Gov 地方自治",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 0,
+      "usedLastKnownGood": false
+    },
+    {
+      "id": "egov-local-finance-tax",
+      "name": "e-Gov 地方財政・地方税",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 0,
+      "usedLastKnownGood": false
+    },
+    {
+      "id": "jpcert",
+      "name": "JPCERT/CC",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 31,
+      "usedLastKnownGood": false
+    },
+    {
+      "id": "ipa-alert",
+      "name": "IPA セキュリティアラート",
+      "status": "success",
+      "httpStatus": 200,
+      "itemsInWindow": 1,
+      "usedLastKnownGood": false
+    }
+  ],
+  "gemini": {
+    "status": "partial",
+    "processedCount": 1,
+    "reviewCount": 1,
+    "model": "gemini-3.5-flash-lite"
+  }
+}
